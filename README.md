@@ -1,3 +1,17 @@
+Runtime Versions
+================
+node v6.3.1
+npm v4.4.1
+
+How to Install
+==============
+$npm install
+
+How to run the tests
+====================
+$node tests.js
+
+
 Pricing problem
 ===============
 NuPack is responsible for taking existing products and repackaging them for sale at electronic stores like Best Buy. Companies will phone up NuPack, explain the process and NuPack needs to quickly give them an estimate of how much it will cost. Different markups to the job:

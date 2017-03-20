@@ -1,0 +1,22 @@
+{
+  "name": "nulogy-exercise",
+  "version": "1.0.0",
+  "description": "A submission for Nulogy",
+  "main": "estimateCalculator.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/clairellesage/nulogy-exercise.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/clairellesage/nulogy-exercise/issues"
+  },
+  "homepage": "https://github.com/clairellesage/nulogy-exercise#readme",
+  "dependencies": {
+    "chai": "^3.5.0"
+  }
+}
