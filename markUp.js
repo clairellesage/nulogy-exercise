@@ -4,10 +4,9 @@ const flatMarkup = function(amount) {
 };
 
 const labourMarkup = function(amount, workers) {
-	let labourAmount = workers * 0.012
-	let markUpPrice = flatMarkup(amount)
-	let markUpAndLabour = labourAmount + markUpPrice
-	return markUpAndLabour;
+	let markUp = flatMarkup(amount)
+	let labourAmount = (markUp * 0.012) * workers
+	return labourAmount;
 };
 
 const materialCost = function(amount, material) {
@@ -16,26 +15,23 @@ const materialCost = function(amount, material) {
 		materialMarkup = 0.075;
 	} else if (material === "food") {
 		materialMarkup = 0.13;
-		debugger;
 	} else if (material === "electronics") {
 		materialMarkup = 0.02;
 	}
-	const materialCost = (flatMarkup(amount) * materialMarkup).toFixed(2)
+	const materialCost = flatMarkup(amount) * materialMarkup;
 	return materialCost;
 }
 
 const totalCost = function(amount, workers, material) {
-	let markup = Number.parseFloat(flatMarkup(amount))
-	let labour = Number.parseFloat(labourMarkup(amount, workers))
-	let materials = Number.parseFloat(materialCost(amount, material))
+	let markup = flatMarkup(amount)
+	let labour = labourMarkup(amount, workers)
+	let materials = materialCost(amount, material)
 	let grandTotal = (markup + labour + materials).toFixed(2)
-
-	console.log(labour)
 	// Math.round(total * 10);
-	// return `$${grandTotal}`
+	return `$${grandTotal}`
 }
 
-console.log(totalCost("1299.99", 3, "food"))
+console.log(totalCost("12456.95", 4, "books"))
 
 // console.log(totalCost("1299.99", 3, "food"));
 
