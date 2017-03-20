@@ -1,37 +1,45 @@
 const flatMarkup = function(amount) {
-	let markUpPrice = Number.parseFloat(amount) + (Number.parseFloat(amount) * 0.05)
-	return markUpPrice;
+	if (typeof amount === 'string') {
+		amount = removeComma(amount);
+	}
+	let priceWithMarkup = Number.parseFloat(amount) + (Number.parseFloat(amount) * 0.05);
+	return priceWithMarkup;
 };
+
+const removeComma = function(string) {
+	let parsedAmount = ""
+	for (i in string) {
+		if (string[i] !== ",") {
+		parsedAmount += string[i];
+		}
+	}
+	return parsedAmount;
+}
 
 const labourMarkup = function(amount, workers) {
-	let markUp = flatMarkup(amount)
-	let labourAmount = (markUp * 0.012) * workers
-	return labourAmount;
+	let labourCost = (flatMarkup(amount) * 0.012) * workers;
+	return labourCost;
 };
 
-const materialCost = function(amount, material) {
-	let materialMarkup = 0;
+const materialMarkup = function(amount, material) {
+	let materialCost = 0;
 	if (material === "drugs") {
-		materialMarkup = 0.075;
+	 materialCost = 0.075;
 	} else if (material === "food") {
-		materialMarkup = 0.13;
+	 materialCost = 0.13;
 	} else if (material === "electronics") {
-		materialMarkup = 0.02;
+	 materialCost = 0.02;
 	}
-	const materialCost = flatMarkup(amount) * materialMarkup;
-	return materialCost;
+	return flatMarkup(amount) * materialCost;
 }
 
-const totalCost = function(amount, workers, material) {
-	let markup = flatMarkup(amount)
-	let labour = labourMarkup(amount, workers)
-	let materials = materialCost(amount, material)
-	let grandTotal = (markup + labour + materials).toFixed(2)
-	// Math.round(total * 10);
-	return `$${grandTotal}`
+const totalEstimate = function(amount, workers, material) {
+	let markup = flatMarkup(amount);
+	let labour = labourMarkup(amount, workers);
+	let materials = materialMarkup(amount, material);
+	let estimate = (markup + labour + materials).toFixed(2);
+	return `$${estimate}`;
 }
 
-console.log(totalCost("12456.95", 4, "books"))
-
-// console.log(totalCost("1299.99", 3, "food"));
+console.log(totalEstimate("1299.99", 3, "food"));
 
