@@ -12,15 +12,16 @@ Thank you for considering my application.
 Runtime Versions
 ================
 node v6.3.1
+
 npm v4.4.1
 
 How to install
 ==============
-$npm install
+	$npm install
 
 How to run the tests
 ====================
-$npm test
+	$npm test
 
 
 Pricing problem
