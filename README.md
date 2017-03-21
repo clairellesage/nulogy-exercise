@@ -1,15 +1,26 @@
+About me
+========
+Hi, I'm Claire. I'm a recent graduate from Lighthouse Labs full time web development bootcamp. My background is in Linguistics -- specifically phonetics and phonology (speech sounds). I'm kind of nerdy about vowels.
+
+I'm relatively new to code -- but 8 weeks of 12 hours days seem to have brought me up to speed with basic Javascript and Ruby. I consider myself full stack but I'm looking forward to learning as much as possible to find what I love and do best.
+
+I just wanted to say that I'm super excited about an opportunity to intern with empowered women who openly care as much as about their professional development as their personal development. 
+
+Thank you for considering my application.
+
+
 Runtime Versions
 ================
 node v6.3.1
 npm v4.4.1
 
-How to Install
+How to install
 ==============
 $npm install
 
 How to run the tests
 ====================
-$node tests.js
+$npm test
 
 
 Pricing problem

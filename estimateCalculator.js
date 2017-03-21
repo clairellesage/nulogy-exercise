@@ -1,5 +1,3 @@
-const formats? = function(amount, workers, material)
-
 const flatMarkup = function(amount) {
 	if (typeof amount === 'string') {
 		amount = removeCommas(amount);
@@ -55,7 +53,12 @@ const totalEstimate = function(amount, workers, material) {
 	return `$${estimate}`;
 }
 
-// console.log(totalEstimate("1,299.99", "3", "food"))
-
-module.exports = totalEstimate;
-
+exports._test = {
+    flatMarkup: flatMarkup,
+    labourMarkup: labourMarkup,
+    materialMarkup: materialMarkup,
+    totalEstimate: totalEstimate,
+    removeCommas: removeCommas,
+    insertCommas: insertCommas,
+    workersToInt: workersToInt
+}
